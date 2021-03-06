@@ -7,4 +7,6 @@ RUN rustup default nightly
 RUN cargo install --path .
 RUN cargo build
 EXPOSE 3001
+RUN chmod -R 777 /target
+USER 1001
 ENTRYPOINT ["/entrypoint.sh"]
